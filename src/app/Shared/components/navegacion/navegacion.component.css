@@ -1,0 +1,11 @@
+.btn-success{
+  background-color: #6f12c5;
+  box-shadow: 4px 2px 12px green;
+}
+
+
+.active {
+  /* Estilos para resaltar el botón cuando está activo */
+  background-color: green;
+  /* ... otros estilos ... */
+}

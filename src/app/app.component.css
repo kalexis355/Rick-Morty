@@ -1,0 +1,18 @@
+/* styles.css */
+
+
+/* h3{
+  font-size: 38px;
+  color: aqua;
+  text-shadow: 2px 2px 2px blue;
+} */
+
+
+@media (max-width: 767px) {
+  .img {
+    /* Ajusta los estilos para pantallas pequeñas, por ejemplo, cambiar el tamaño o ocultar la imagen */
+    width: 50%; /* Ejemplo: reduce el ancho a la mitad en pantallas pequeñas */
+    display: block; /* Puedes ajustar esto según tus necesidades específicas */
+    margin: auto; /* Para centrar la imagen */
+  }
+}

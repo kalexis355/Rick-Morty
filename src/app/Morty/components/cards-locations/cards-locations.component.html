@@ -1,0 +1,29 @@
+<!-- <h3 *ngFor="let location of locations">
+{{location.name}}
+</h3> -->
+<div class="contenedor">
+  <div class="row justify-content-center">
+    <div
+      *ngFor="let location of locations"
+      class="m-4 col-md-3 d-flex  ">
+      <div class="col text-center color">
+       <strong class="fs-4 color-titulo">{{ location.name }}</strong>
+       <div>
+        <strong>Cantidad de Integrantes</strong>
+        <div>
+          {{location.residents.length}}
+        </div>
+      <strong>Tipo de Locación</strong>
+        <div>
+          {{location.type}}
+        </div >
+        <div class=>
+        <strong>Dimensión</strong> {{location.dimension}}  <a  href="#" class="etiqueta">Ver más</a>
+
+      </div>
+       </div>
+      </div>
+
+    </div>
+  </div>
+</div>

@@ -1,0 +1,27 @@
+<!-- <h3 *ngFor="let episode of episodes">
+{{episode.name}}
+</h3> -->
+<div class="contenedor">
+  <div class="row justify-content-center">
+  <div
+  *ngFor="let episode of episodes"
+  class="m-4 col-md-3 d-flex color ">
+  <div class="col text-center">
+
+    <strong class="fs-5 color-titulo">{{episode.name}}</strong>
+    <div>
+    {{episode.episode}}
+    </div>
+  <div>
+    <strong>Fecha de Emisión</strong>  {{episode.air_date}}
+  </div>
+  <div>
+    {{episode.characters.length}} personajes Participantes
+  </div>
+  <div>
+    <a href="#" class="etiqueta">Ver Más</a>
+  </div>
+  </div>
+</div>
+</div>
+</div>

@@ -22,7 +22,9 @@
             "tsConfig": "tsconfig.app.json",
             "assets": [
               "src/favicon.ico",
-              "src/assets"
+              "src/assets",
+              "src/assets/fonts/get_schwifty.ttf",
+              "src/assets/fonts/Rick Geovani.otf"
             ],
             "styles": [
               "src/styles.css"
@@ -94,5 +96,8 @@
         }
       }
     }
+  },
+  "cli": {
+    "analytics": "c1048624-3dd3-431b-a335-e1b16498aa4a"
   }
 }

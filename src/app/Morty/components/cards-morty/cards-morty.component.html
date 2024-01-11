@@ -1,0 +1,18 @@
+
+<div class="contenedor">
+  <div class="row">
+    <div *ngFor="let morty of morties" class="m-4 col-md-3 d-flex">
+      <div>
+        <img [src]="morty.image" [alt]="morty.name" class="rounded" />
+      </div>
+      <div class="row justify-content-center color">
+        <h3 class="fs-6  text-center">{{ morty.name }}</h3>
+        <div class="col text-center">
+          <strong class="fs-6  ">Especie:</strong>
+          <h3 class="fs-6 ">{{ morty.species }}</h3>
+        </div>
+        <a href="#" class="etiqueta text-center ">Ver más</a>
+      </div>
+    </div>
+  </div>
+</div>

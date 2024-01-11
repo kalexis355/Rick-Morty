@@ -1,0 +1,30 @@
+
+
+
+img{
+width: 120px;
+border:  3px solid #305a34;
+box-shadow: 1px 1px 12px #c6ef56;
+
+
+
+}
+
+.etiqueta{
+  text-decoration: none;
+  font-size: 20px;
+  font-weight: bold;
+  color: #6F12C5;
+  text-shadow: 2px 2px 12px #305a34;
+}
+
+.etiqueta:hover{
+  color: #c6ef56c0;
+}
+
+
+
+.row{
+  justify-content: center;
+}
+

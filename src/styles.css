@@ -1,1 +1,54 @@
 /* You can add global styles to this file, and also import other style files */
+ /*body{
+  width: 100vh;
+  height: 100vh;
+  background: rgb(42,154,3);
+background: radial-gradient(circle, rgba(42,154,3,1) 2%, rgba(71,214,15,1) 67%, rgba(55,187,7,0.9411414223892682) 86%, rgba(130,219,139,1) 98%, rgba(114,226,102,1) 100%);
+  background-repeat: no-repeat;
+  background-size: cover;
+} */
+
+body{
+
+    background: url('src/assets/icons/fondo3.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100vh;
+    height: 100vh;
+}
+
+.contenedor{
+  height: 485px;
+  overflow: auto;
+  overflow-x: hidden;
+}
+
+.contenedor::-webkit-scrollbar {
+  width: 0.5em; /* Ancho de la barra de desplazamiento */
+  border-radius: 4px;
+}
+
+.contenedor::-webkit-scrollbar-thumb {
+  background-color: rgb(111, 19, 197);
+  border-radius: 4px; /* Color del pulgar de la barra de desplazamiento */
+
+}
+
+.contenedor::-webkit-scrollbar-thumb:active {
+  background-color: green; /* Cambia el color a tu preferencia */
+}
+
+
+.color{
+  /* background-color: #02b3d2d5; */
+  background-color: #5fa4b2;
+  color: black;
+  border-radius: 5px;
+  border:  3px solid #305a34;
+  box-shadow: 2px 2px 12px #c6ef56;
+}
+.color-titulo{
+  text-shadow: 2px 2px 12px #305a34;
+
+}
+
