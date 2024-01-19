@@ -1,0 +1,42 @@
+<div class="text-center">
+  <div class="d-flex justify-content-center align-items-center">
+    <h3>{{ personaje?.name }}</h3>
+    <h6
+      class="bg-success m-2 rounded-pill p-2"
+      [ngClass]="{
+        'bg-success': personaje?.status === 'Alive',
+        'bg-danger': personaje?.status === 'Dead',
+        'bg-info bg-opacity-75': personaje?.status === 'unknown'
+      }"
+    >
+      <p
+        class="d-inline p-1"
+        [ngClass]="{
+          'simbolo': personaje?.status === 'Dead',
+          'desconocido': personaje?.status === 'unknown',
+        }"
+      >
+        O
+      </p>
+      {{ personaje?.status }}
+    </h6>
+  </div>
+  <img class="img-thumbnail" [src]="personaje?.image" [alt]="personaje?.name" />
+  <div class="info d-flex flex-column">
+    <div class="m-2">
+      <div class="especie">
+        <strong class="d-inline">Especie: </strong> <p class="d-inline">{{ personaje?.species }}</p>
+      </div>
+      <div *ngIf="personaje?.type !==''">
+        <strong>Tipo: </strong><p class="d-inline">{{ personaje?.type }}</p></div>
+      <div>
+        <strong class="d-inline">Genero:</strong>
+        <p class="d-inline">{{ personaje?.gender }}</p>
+          <strong> Origen:</strong> <p class="d-inline">{{personaje?.origin?.name}}</p>
+      </div>
+      <div>
+        <strong>Cantidad de apariciones en episodios:<p class="d-inline">{{personaje?.episode?.length}}</p></strong>
+      </div>
+    </div>
+  </div>
+</div>

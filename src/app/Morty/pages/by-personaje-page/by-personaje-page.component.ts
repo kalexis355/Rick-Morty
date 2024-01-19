@@ -19,7 +19,6 @@ export class ByPersonajePageComponent implements OnInit {
   }
 
 
-
   searchPersonaje(nombre:string){
     this.mortyService.searchNamePersonaje(nombre)
     .subscribe((data:Mortys) =>{

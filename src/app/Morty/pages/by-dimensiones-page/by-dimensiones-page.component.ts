@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { MortysService } from '../../services/mortys.service';
-import { MortysLocation, Result } from '../../interfaces/location';
+import { MortysLocation, ResultLocation } from '../../interfaces/location';
 
 @Component({
   selector: 'app-by-dimensiones-page',
@@ -9,7 +9,7 @@ import { MortysLocation, Result } from '../../interfaces/location';
 })
 export class ByDimensionesPageComponent {
 
-  public locations:Result[]=[]
+  public locations:ResultLocation[]=[]
   constructor(private MortyService:MortysService) {
     this.searchLocationMortys()
   }

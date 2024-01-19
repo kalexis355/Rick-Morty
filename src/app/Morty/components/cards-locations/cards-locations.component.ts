@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { Result } from '../../interfaces/location';
+import { ResultLocation } from '../../interfaces/location';
 
 @Component({
   selector: 'morty-cards-locations',
@@ -9,5 +9,5 @@ import { Result } from '../../interfaces/location';
 export class CardsLocationsComponent {
 
   @Input()
-  public locations:Result[]=[]
+  public locations:ResultLocation[]=[]
 }

@@ -11,7 +11,7 @@
           <strong class="fs-6  ">Especie:</strong>
           <h3 class="fs-6 ">{{ morty.species }}</h3>
         </div>
-        <a href="#" class="etiqueta text-center ">Ver más</a>
+        <a [routerLink]="['/mortys/by/',morty.id]" class="etiqueta text-center ">Ver más</a>
       </div>
     </div>
   </div>

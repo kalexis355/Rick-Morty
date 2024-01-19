@@ -1,6 +1,6 @@
 export interface MortysEpisode {
   info:    Info;
-  results: Result[];
+  results: ResultEpisode[];
 }
 
 export interface Info {
@@ -10,7 +10,7 @@ export interface Info {
   prev:  null;
 }
 
-export interface Result {
+export interface ResultEpisode {
   id:         number;
   name:       string;
   air_date:   string;

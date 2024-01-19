@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { Result } from '../../interfaces/episode';
+import { ResultEpisode } from '../../interfaces/episode';
 
 @Component({
   selector: 'morty-cards-episodes',
@@ -9,7 +9,7 @@ import { Result } from '../../interfaces/episode';
 export class CardsEpisodesComponent {
 
   @Input()
-  public episodes:Result[]=[]
+  public episodes:ResultEpisode[]=[]
 
 
 }

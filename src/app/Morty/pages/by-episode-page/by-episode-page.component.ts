@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { MortysService } from '../../services/mortys.service';
-import { MortysEpisode, Result } from '../../interfaces/episode';
+import { MortysEpisode, ResultEpisode } from '../../interfaces/episode';
 
 @Component({
   selector: 'app-by-episode-page',
@@ -9,7 +9,7 @@ import { MortysEpisode, Result } from '../../interfaces/episode';
 })
 export class ByEpisodePageComponent {
 
-  public episodes:Result[]=[]
+  public episodes:ResultEpisode[]=[]
  constructor(private mortysService:MortysService){
   this.searchEpisode()
  }

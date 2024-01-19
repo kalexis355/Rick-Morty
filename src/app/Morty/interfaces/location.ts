@@ -1,6 +1,6 @@
 export interface MortysLocation {
   info:    Info;
-  results: Result[];
+  results: ResultLocation[];
 }
 
 export interface Info {
@@ -10,7 +10,7 @@ export interface Info {
   prev:  null;
 }
 
-export interface Result {
+export interface ResultLocation {
   id:        number;
   name:      string;
   type:      string;
