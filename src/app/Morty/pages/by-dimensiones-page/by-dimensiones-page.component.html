@@ -1,8 +1,13 @@
 
 <shared-buscador
-valorPlaceHolder="Buscar Locación...">
+valorPlaceHolder="Buscar Locación..."
+(emitirNombre)="searchLocationUnica($event)"
+(emitirNombrePresionando)="searchLocationUnica($event)">
 </shared-buscador>
 
-<morty-cards-locations [locations]="locations">
-
-</morty-cards-locations>
+<shared-loading
+*ngIf="isLoading"
+[buscando]="'Buscando Episodios'"></shared-loading>
+<morty-cards-locations
+*ngIf="!isLoading"
+[locations]="locations"></morty-cards-locations>

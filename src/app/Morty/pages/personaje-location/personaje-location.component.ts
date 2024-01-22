@@ -16,6 +16,8 @@ export class PersonajeLocationComponent implements OnInit {
 
   public personajeResidente:Result[]=[]
 
+  public titulo?:string
+
   constructor(
     private mortyService:MortysService,
     private router:Router,
@@ -33,7 +35,7 @@ export class PersonajeLocationComponent implements OnInit {
         return this.router.navigateByUrl('')
       }
       this.personajeLocation=personajeLocation
-
+      this.titulo=personajeLocation.name
       this.personajesResidentes(personajeLocation)
       return
 
@@ -46,10 +48,8 @@ export class PersonajeLocationComponent implements OnInit {
 
   personajesResidentes(personajeLocation:ResultLocation){
     personajeLocation.residents.forEach(residentes => {
-      console.log(residentes);
-      this.mortyService.personajeresidente(residentes)
+   this.mortyService.personajeresidente(residentes)
       .subscribe( (personajeRLocation) =>{
-        console.log('hola',personajeRLocation);
         if(personajeRLocation){
           this.personajeResidente.push(personajeRLocation)
         }

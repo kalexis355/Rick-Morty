@@ -1,7 +1,14 @@
 <shared-buscador
-valorPlaceHolder="Buscar episodio...">
+valorPlaceHolder="Buscar episodio..."
+(emitirNombre)="searchNameEpisode($event)"
+(emitirNombrePresionando)="searchNameEpisode($event)">
 </shared-buscador>
 
+<shared-loading
+*ngIf="isLoading"
+[buscando]="'Buscando Episodios'"></shared-loading>
+
 <morty-cards-episodes
-[episodes]="episodes">
-</morty-cards-episodes>
+
+*ngIf="!isLoading"
+[episodes]="episodes"></morty-cards-episodes>

@@ -1,22 +1,53 @@
-import { Component, ElementRef, EventEmitter, Input, Output, ViewChild } from '@angular/core';
+import { Component, ElementRef, EventEmitter, Input, OnInit, Output, ViewChild } from '@angular/core';
+import { Subject, debounceTime } from 'rxjs';
 
 @Component({
   selector: 'shared-buscador',
   templateUrl: './buscador.component.html',
   styleUrls: ['./buscador.component.css']
 })
-export class BuscadorComponent {
+export class BuscadorComponent implements OnInit {
+
+
+  private ondebunce:Subject<string> = new Subject<string>()
+
+
   @Input()
- public valorPlaceHolder:string = ''
+  public termino:string=''
 
- @Output()
- public emitirNombre:EventEmitter<string> = new EventEmitter();
+  @Input()
+  public valorPlaceHolder:string = ''
 
- @ViewChild('valorInput')
- public valorInput!:ElementRef<HTMLInputElement>
+  @Output()
+  public emitirNombre:EventEmitter<string> = new EventEmitter();
 
- emitirNombreInput(){
+  @Output()
+  public emitirNombrePresionando:EventEmitter<string> = new EventEmitter();
+
+  @ViewChild('valorInput')
+  public valorInput!:ElementRef<HTMLInputElement>
+
+  ngOnInit(): void {
+    this.ondebunce
+    .pipe(
+      debounceTime(1000)
+    )
+    .subscribe( value =>{
+      console.log(value);
+
+      this.emitirNombrePresionando.emit(value)
+    })
+  }
+
+
+
+  emitirNombreInput(){
+    const valorNombre = this.valorInput.nativeElement.value;
+    this.emitirNombre.emit(valorNombre);
+ }
+
+ emitirTerminoPresionando(){
   const valorNombre = this.valorInput.nativeElement.value;
-  this.emitirNombre.emit(valorNombre);
+  this.ondebunce.next(valorNombre)
  }
 }

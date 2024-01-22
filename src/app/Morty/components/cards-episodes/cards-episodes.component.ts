@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { ResultEpisode } from '../../interfaces/episode';
 
 @Component({
@@ -10,6 +10,15 @@ export class CardsEpisodesComponent {
 
   @Input()
   public episodes:ResultEpisode[]=[]
+
+  @Output()
+  public tituloEpisodio:EventEmitter<string>= new EventEmitter<string>()
+
+  emitirtitulo(titulo:string){
+    console.log(titulo);
+
+    this.tituloEpisodio.emit(titulo)
+  }
 
 
 }

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { MortysService } from '../../services/mortys.service';
 import { MortysEpisode, ResultEpisode } from '../../interfaces/episode';
 
@@ -7,19 +7,38 @@ import { MortysEpisode, ResultEpisode } from '../../interfaces/episode';
   templateUrl: './by-episode-page.component.html',
   styleUrls: ['./by-episode-page.component.css']
 })
-export class ByEpisodePageComponent {
+export class ByEpisodePageComponent implements OnInit {
 
   public episodes:ResultEpisode[]=[]
+  public isLoading:boolean=false;
+
+
+
  constructor(private mortysService:MortysService){
-  this.searchEpisode()
- }
+}
+ngOnInit(): void {
+    this.searchEpisode()
+  }
 
   searchEpisode(){
+    this.isLoading=true
     this.mortysService.searchEpisode()
     .subscribe((data:MortysEpisode)=>{
       this.episodes=data.results
-      console.log(this.episodes);
+      this.isLoading=false
+    })
+  }
 
+  searchNameEpisode(termino:string){
+    this.isLoading=true
+    this.mortysService.searchNameEpisode(termino)
+    .subscribe((episode:MortysEpisode | null)=>{
+      if(episode){
+        this.episodes = episode.results
+      }else{
+        this.episodes = []
+      }
+      this.isLoading = false
     })
   }
 

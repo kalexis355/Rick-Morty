@@ -1,6 +1,8 @@
-<!-- <h3 *ngFor="let location of locations">
-{{location.name}}
-</h3> -->
+<div *ngIf="locations.length===0"
+class="alert alert-danger text-center m-4">
+No hay locaciones para mostrar
+</div>
+
 <div class="contenedor">
   <div class="row justify-content-center">
     <div

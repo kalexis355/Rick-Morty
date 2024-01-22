@@ -1,6 +1,12 @@
 <!-- <h3 *ngFor="let episode of episodes">
 {{episode.name}}
 </h3> -->
+<div *ngIf="episodes.length===0"
+class="alert alert-danger text-center m-4">
+  No hay episodios que mostrar
+</div>
+
+
 <div class="contenedor">
   <div class="row justify-content-center">
   <div
@@ -19,7 +25,7 @@
     {{episode.characters.length}} personajes Participantes
   </div>
   <div>
-    <a [routerLink]="['/mortys/by-episode/',episode.id]" class="etiqueta">Ver Más</a>
+    <a [routerLink]="['/mortys/by-episode/',episode.id]" (click)="emitirtitulo(episode.name)" class="etiqueta">Ver Más</a>
   </div>
   </div>
 </div>

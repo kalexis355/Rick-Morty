@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { ResultEpisode } from '../../interfaces/episode';
 import { MortysService } from '../../services/mortys.service';
 import { ActivatedRoute, Router } from '@angular/router';
@@ -14,7 +14,11 @@ export class PersonajeEpisodeComponent implements OnInit{
 
   public episodeUnico?:ResultEpisode
 
+  public titulo?:string
+
   public personajesEpisode:Result[]=[]
+
+
 
   constructor(
     private mortyService:MortysService,
@@ -35,6 +39,8 @@ export class PersonajeEpisodeComponent implements OnInit{
      }else{
        this.episodeUnico = episodio
        this.personajeEpisodio(episodio)
+       this.titulo=episodio.name;
+
      }
 
     }

@@ -2,4 +2,6 @@
 class="form-control form-input "
 [placeholder]="valorPlaceHolder"
 (keyup.enter)="emitirNombreInput()"
+(keyup)="emitirTerminoPresionando()"
+[value]="termino"
 #valorInput>

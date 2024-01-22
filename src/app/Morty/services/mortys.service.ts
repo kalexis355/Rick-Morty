@@ -13,7 +13,9 @@ export class MortysService {
   private apiUrlePersonaje:string='https://rickandmortyapi.com/api/character'
   private apiUrlEpisode:string='https://rickandmortyapi.com/api/episode'
 
-  public personaje?:Result;
+  public personajes:Result[]=[];
+  public termino:string=''
+
 
   constructor(private http: HttpClient) { }
 
@@ -51,15 +53,41 @@ export class MortysService {
     return this.http.get<ResultEpisode>(url)
     .pipe(
       map(episode => episode.id>0? episode:null),
-      catchError(()=>of(null))
+      catchError(error=>of(null))
     )
   }
 
 
-  searchNamePersonaje(termino:string):Observable<Mortys>{
+  searchNamePersonaje(termino:string):Observable<Mortys|  null>{
     return this.http.get<Mortys>(`${this.apiUrlePersonaje}?name=${termino}`)
     .pipe(
-      catchError(()=>of())
+      catchError(()=>of(null)),
+      tap(morties =>{
+        if(morties){
+          console.log(morties.results);
+
+        this.personajes= morties?.results;
+        this.termino= termino
+        }else{
+          this.personajes=[]
+        }
+
+      })
+    )
+  }
+
+  searchNameLocation(termino:string):Observable<MortysLocation|null>{
+    return this.http.get<MortysLocation>(`${this.apiUrlLocation}?name=${termino}`)
+    .pipe(
+      catchError(()=> of(null))
+    )
+  }
+
+  searchNameEpisode(termino:string):Observable<MortysEpisode|null>{
+    return this.http.get<MortysEpisode>(`${this.apiUrlEpisode}?name=${termino}`)
+    .pipe(
+      catchError(()=> of(null)
+      )
     )
   }
 

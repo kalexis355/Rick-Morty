@@ -1,9 +1,13 @@
 <shared-buscador
 valorPlaceHolder="Buscar Personaje..."
 (emitirNombre)="searchPersonaje($event)"
+(emitirNombrePresionando)="searchPersonaje($event)"
+[termino]="inicialValue"
 ></shared-buscador>
 
+<shared-loading *ngIf="isloading" [buscando]="'Buscando Personajes'"></shared-loading>
 <morty-cards
+*ngIf="!isloading"
 [morties]="mortys"
 
 ></morty-cards>
